@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0d1220" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Stress &amp; Recovery Session</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230d1220'/%3E%3Cpath d='M5 17h5l3-7 5 13 3-6h6' fill='none' stroke='%238fb0ff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Thin participant-facing bar shown only while a session runs -->
+  <header id="session-chrome" aria-hidden="true">
+    <div class="chrome-left">
+      <span class="chrome-dot"></span>
+      <span id="chrome-label">Session</span>
+    </div>
+    <div class="chrome-right"><kbd>Esc</kbd> pause</div>
+    <div class="chrome-progress"><div id="chrome-progress-fill"></div></div>
+  </header>
+
+  <!-- All screens are rendered in here by app.js -->
+  <main id="stage" aria-live="polite"></main>
+
+  <!-- YouTube player lives here permanently (moving an iframe reloads it);
+       CSS shows it only while recovery music plays. -->
+  <div id="yt-dock" aria-label="Recovery music player"></div>
+
+  <!-- Pause overlay, confirm dialogs -->
+  <div id="overlay-root"></div>
+
+  <div id="test-badge" hidden></div>
+
+  <noscript>This app needs JavaScript enabled.</noscript>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
